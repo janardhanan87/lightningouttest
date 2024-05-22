@@ -1,6 +1,6 @@
 <html>
 <body>
-<div id="lightningOutContainer"></div>
+<div data-lightning-out="true"></div>
     <script src="https://infosys-7b0-dev-ed.develop.my.site.com/lightning/lightning.out.js">
     </script>
     <script>
@@ -11,7 +11,7 @@
       $Lightning.createComponent(
         "c:sampleLWC", // top-level component of your app
         {}, // attributes to set on the component when created
-        "lightningOutContainer"
+        document.querySelector("[data-lightning-out]")
       );
     },
     "https://infosys-7b0-dev-ed.develop.my.site.com" // Site endpoint

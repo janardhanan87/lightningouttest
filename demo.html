@@ -1,0 +1,21 @@
+<html>
+<body>
+<div id="lightningOutContainer"></div>
+    <script src="https://infosys-7b0-dev-ed.develop.my.site.com/lightning/lightning.out.js">
+    </script>
+    <script>
+    $Lightning.use(
+    "c:flowAuraApp", // name of the Lightning Out app
+    function () {
+      // Callback once framework and app loaded
+      $Lightning.createComponent(
+        "c:sampleLWC", // top-level component of your app
+        {}, // attributes to set on the component when created
+        "lightningOutContainer"
+      );
+    },
+    "https://infosys-7b0-dev-ed.develop.my.site.com" // Site endpoint
+  );
+    </script>     
+</body>
+</html>

@@ -1,21 +1,36 @@
 <html>
-<body>
+
+<script src="https://infosys-7b0-dev-ed.develop.my.site.com/lightning/lightning.out.js"></script>
+
 <div data-lightning-out="true"></div>
-    <script src="https://infosys-7b0-dev-ed.develop.my.site.com/lightning/lightning.out.js">
-    </script>
-    <script>
+
+  <script>
+
+    const appName = 'c:flowAuraApp';
+    const componentName = 'c:sampleLWC';
+    const lightningEndpoint = 'https://infosys-7b0-dev-ed.develop.my.site.com';
+    const targetElement = document.querySelector("[data-lightning-out]");
+    const componentAttributes = {
+
+    };
+
     $Lightning.use(
-    "c:flowAuraApp", // name of the Lightning Out app
-    function () {
-      // Callback once framework and app loaded
-      $Lightning.createComponent(
-        "c:sampleLWC", // top-level component of your app
-        {}, // attributes to set on the component when created
-        document.querySelector("[data-lightning-out]")
-      );
-    },
-    "https://infosys-7b0-dev-ed.develop.my.site.com" // Site endpoint
-  );
-    </script>     
-</body>
+            appName,
+            function (){
+              $Lightning.createComponent(
+                      componentName,
+                      componentAttributes,
+                      targetElement,
+                      function (cmp){
+                        console.log('lightning component created');
+                      }
+              );
+            },
+            lightningEndpoint
+    );
+
+
+  </script>
+
+
 </html>
